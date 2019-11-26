@@ -1,7 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<!DOCTYPE html>
+<html>
 <head>
-<title>用Javascript生成二维码</title>
+<title>用Javascript生成二维码,在线生成二维码</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
 <link href="../dist/bootstrap.min.css" rel="stylesheet">
@@ -42,29 +42,24 @@ table{
 		  <td colspan="3" class="title">生成二维码</td>
 		</tr>
 		<tr>
-		  <td width="107">
-			<input id="text" type="text" value="jasonhua" style="width:100%" /></td>
 		  <td width="351">
-		  <div id="qrcode" style="width:100px; height:100px; margin-top:15px;"></div>
+			<textarea autofocus rows="7" cols="20" id="text" type="textarea" style="width:100%">jasonhua</textarea>
 		  </td>
+		  <td width="107">
+		  <div id="qrcode" style="width:100px; height:210px; margin-top:15px;"></div>
+		  </td>
+		</tr>
 	</div>
 </div>
 
 <script type="text/javascript">
 var qrcode = new QRCode(document.getElementById("qrcode"), {
-	width : 100,
-	height : 100
+	width : 200,
+	height : 200
 });
 
 function makeCode () {		
 	var elText = document.getElementById("text");
-	
-	if (!elText.value) {
-		alert("Input a text");
-		elText.focus();
-		return;
-	}
-	
 	qrcode.makeCode(elText.value);
 }
 
