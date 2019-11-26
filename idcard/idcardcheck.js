@@ -27,6 +27,9 @@ var address = function(id){
 	var area =  document.getElementById("area");
 	var a = id.substring(4,6);
 	
+	city.innerHTML = "";
+	area.innerHTML = "";
+	
 	for (var i = 0; i < data.length; i++) {
 		if(data[i].code.substring(0,2)==p){
 			province.innerHTML = data[i].name; if(a == "") return false;
@@ -75,7 +78,22 @@ var agefun = function(id){
 	var xingzuo =  document.getElementById("xingzuo");
 }
 
+var getElementsByClassName = function(clsName, tagName,flag) {
+    var selElements = document.getElementsByTagName(tagName);
+
+    for (var i = 0; i < selElements.length; i++) {
+        if (selElements[i].className == clsName) {
+			if(!flag){
+				selElements[i].style.display='none';
+			}else{
+				selElements[i].style.display = "list-item";
+			}
+        }
+    }
+}
+
 var jasonhuaIdCard = function(){
+	getElementsByClassName("display","li",false);
 	var idcard =  document.getElementById("idcard").value;
 	var message =  document.getElementById("message");
 	
@@ -88,8 +106,10 @@ var jasonhuaIdCard = function(){
 		message.innerHTML="身份证不符合规则";
 		return false;
 	}
+	getElementsByClassName("display","li",true);
 	message.innerHTML="身份证号码校验合法";
 	address(idcard);
 	sexfun(idcard);
 	agefun(idcard);
 };
+getElementsByClassName("display","li",false);

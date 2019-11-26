@@ -8,7 +8,6 @@
     <meta name="applicable-device" content="pc,mobile">
     <title>在线身份证号码验证，通过身份证查详细信息</title>
     <link href="../dist/bootstrap.min.css" rel="stylesheet">
-    <script src="./idcardcheck.js"></script>
     <script src="./cpro.js"></script>
     <style type="text/css">
 
@@ -51,6 +50,14 @@
             color: #000000;
             text-align: center;
         }
+		
+		.displaynone{
+			display:none;
+		}
+		
+		.displaylist{
+			display:list-item;
+		}
     </style>
 </head>
 <body>
@@ -80,7 +87,7 @@
 										省份：<span id="province"></span>，
 										市：<span id="city"></span>，
 										区：<span id="area"></span></li>
-									<li class="display">
+									<li class="display displaynone">
 									性别：<span id="sex"></span>
 									</li>
 									<li class="display">
@@ -93,13 +100,13 @@
 										年龄（虚岁）：<span id="xage"></span>
 									</li>
 									<!--
-									<li class="display">
+									<li class="display displaynone">
 										生日（农历）：<span id="nage">辛丑(牛)年十一月廿九</span>
 									</li>
-									<li class="display">
+									<li class="display displaynone">
 										属相：<span id="shuxiang">牛</span>
 									</li>
-									<li class="display">
+									<li class="display displaynone">
 										星座：<span id="xingzuo">摩羯座</span>
 									</li>-->
 								</ul>
@@ -110,6 +117,6 @@
             </table>
         </form>
     </div>
-	
+	    <script src="./idcardcheck.js"></script>
 </body>
 </html>
