@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>在线生成Guid，Guid生成器</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<link href="../dist/bootstrap.min.css" rel="stylesheet">
+<script type="text/javascript" src="../dist/jquery.min.js"></script>
+<style type="text/css">
+body{
+	width:90%;
+    max-width: 960px;
+	margin:auto;
+	padding:0px;
+	font-size:15px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+
+td{
+	padding:10px;
+	border-bottom:1px solid #ccc;
+	border-right:1px solid #ccc;
+}
+table{
+	border-left:1px solid #ccc;
+	border-top:1px solid #ccc;
+}
+.title{
+	font-size:25px;
+	font-weight:bold;
+	color:#000000;
+	text-align:center;
+}
+</style>
+</head>
+<body>
+<div class="body-wrap">
+	<div style="margin-top:10px;">
+	 <table width="100%" border="0" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+		  <td class="title">在线生成Guid
+			<button class="btn btn-primary btn-guid">生成Guid</button>
+		  </td>
+		</tr>
+		<tr>
+		  <td width="351">
+			<textarea autofocus rows="7" cols="20" id="text" type="textarea" style="width:100%"></textarea>
+		  </td>
+		</tr>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+/**
+ *获取id
+ */
+function guid() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+        return v.toString(16);
+    });
+}
+
+$(document).ready(function(){
+	$(".btn-guid").click(function(){
+		var tid = guid(); 
+		$("#text").val(tid);
+	});
+	
+	$(".btn-guid").click();
+});
+
+
+</script>
+</body>
