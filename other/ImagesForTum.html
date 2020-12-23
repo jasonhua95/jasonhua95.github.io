@@ -27,7 +27,7 @@
 </head>
 <body>
 	<div class="source">
-		<label for="">原图：</label><br/><img src="ImagesForTum.png" alt="">
+		<label for="">原图：</label><br/><img src="ImagesForTum.png" alt="" id="sourceImage">
 	</div>
 	<div class="change">
 		<label>选择尺寸</label>
@@ -43,7 +43,7 @@
     <script type="text/javascript">
     	var show = document.getElementById("show"),
     		size = document.getElementById("size"),
-    		src = 'images/pic.png';
+    		src = document.getElementById("sourceImage").src;
     	size.onchange = function(){
     		var value = this.value,
     			arr = value.split('X'),
